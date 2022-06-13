@@ -6,9 +6,9 @@ namespace ShipStation.NetSdk
     {
         private readonly HttpClient _api;
         
-        public ShipStationService(IHttpClientFactory httpClientFactory)
+        public ShipStationService(HttpClient api)
         {
-            _api = httpClientFactory.CreateClient(nameof(ShipStationService));
+            _api = api;
         }
 
         public async Task<IList<RateResponse>> GetRates(RateRequest requestModel)

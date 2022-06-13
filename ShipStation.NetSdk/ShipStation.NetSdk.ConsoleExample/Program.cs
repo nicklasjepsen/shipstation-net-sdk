@@ -7,7 +7,9 @@ namespace ShipStation.NetSdk.ConsoleExample
 {
     internal class Program
     {
-        private static async Task<int> Main(string[] args)
+        protected Program(){}
+
+        private static async Task<int> Main()
         {
             var config = new ConfigurationBuilder()
                 .AddUserSecrets<Program>()
@@ -24,6 +26,12 @@ namespace ShipStation.NetSdk.ConsoleExample
             try
             {
                 var shipStation = host.Services.GetRequiredService<ShipStationService>();
+                var rates = await shipStation.GetRates(new RateRequest("fedex", "78703", new Weight(3, "ounces"),
+                    "US", "20500"));
+                foreach (var rate in rates)
+                {
+                    Console.WriteLine($"ServiceName: {rate.ServiceName}, serviceCode: {rate.ServiceCode}, shipment cost: {rate.ShipmentCost}, other cost: {rate.OtherCost}");
+                }
             }
             catch (Exception ex)
             {
@@ -31,7 +39,7 @@ namespace ShipStation.NetSdk.ConsoleExample
 
                 logger.LogError(ex, "An error occurred.");
             }
-
+            
             return 0;
         }
     }

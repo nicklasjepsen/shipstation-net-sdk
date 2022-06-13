@@ -4,11 +4,9 @@ namespace ShipStation.NetSdk
 {
     public class RateRequest
     {
-        public RateRequest(string carrierCode, string serviceCode, string packageCode, string fromPostalCode, Weight weight, string toCountry, string toPostalCode)
+        public RateRequest(string carrierCode, string fromPostalCode, Weight weight, string toCountry, string toPostalCode)
         {
             CarrierCode = carrierCode;
-            ServiceCode = serviceCode;
-            PackageCode = packageCode;
             FromPostalCode = fromPostalCode;
             Weight = weight;
             ToCountry = toCountry;
@@ -16,8 +14,8 @@ namespace ShipStation.NetSdk
         }
 
         [JsonPropertyName("carrierCode")] public string CarrierCode { get; set; }
-        [JsonPropertyName("serviceCode")] public string ServiceCode { get; set; }
-        [JsonPropertyName("packageCode")] public string PackageCode { get; set; }
+        [JsonPropertyName("serviceCode")] public string? ServiceCode { get; set; }
+        [JsonPropertyName("packageCode")] public string? PackageCode { get; set; }
         [JsonPropertyName("fromPostalCode")] public string FromPostalCode { get; set; }
         [JsonPropertyName("weight")] public Weight Weight { get; set; }
         [JsonPropertyName("toCountry")] public string ToCountry { get; set; }
@@ -33,6 +31,6 @@ namespace ShipStation.NetSdk
         /// <summary>
         /// Carriers may return different rates based on if the address is commercial (false) or residential (true). Default value: false
         /// </summary>
-        [JsonPropertyName("residential")] public bool? Residential { get; set; }
+        [JsonPropertyName("residential")] public bool Residential { get; set; }
     }
 }
