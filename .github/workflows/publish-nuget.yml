@@ -26,7 +26,7 @@ jobs:
           dotnet-version: 6.x
 
       - name: Build
-        run: dotnet build ShipStations.NetSdk/ShipStation.NetSdk.sln --configuration $BUILD_CONFIG --no-restore
+        run: dotnet build ShipStations.NetSdk/ShipStation.NetSdk.sln --configuration Release --no-restore
 
   # This workflow contains a single job called "build"
   publish_nuget:
