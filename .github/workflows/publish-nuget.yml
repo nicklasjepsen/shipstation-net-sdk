@@ -39,5 +39,5 @@ jobs:
       - name: Publish NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
-          PROJECT_FILE_PATH: $env:PROJECT
+          PROJECT_FILE_PATH: ShipStation.NetSdk/ShipStation.NetSdk/ShipStation.NetSdk.csproj
           PACKAGE_NAME: ShipStation.NetSdk
