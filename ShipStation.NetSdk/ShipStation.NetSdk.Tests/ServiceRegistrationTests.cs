@@ -1,7 +1,6 @@
-using Microsoft.Extensions.DependencyInjection;
-
 namespace ShipStation.NetSdk.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class ServiceRegistrationTests
     {
         [Fact]
