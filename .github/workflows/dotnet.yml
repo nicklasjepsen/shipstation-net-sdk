@@ -37,12 +37,26 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Cache SonarCloud scanner
+        id: cache-dotnet-coverage
+        uses: actions/cache@v1
+        with:
+          path: .\.dotnet\coverage
+          key: ${{ runner.os }}-dotnet-coverage
+          restore-keys: ${{ runner.os }}-dotnet-coverage
+      - name: Install dotnet-coverage
+        if: steps.cache-dotnet-coverage.outputs.cache-hit != 'true'
+        shell: powershell
+        run: |
+          dotnet tool update --global dotnet-coverage
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
+        working-directory: ShipStation.NetSdk
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"nicklasjepsen_shipstation-net-sdk" /o:"nicklasjepsen" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build ShipStation.NetSdk
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"nicklasjepsen_shipstation-net-sdk" /o:"nicklasjepsen" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+          dotnet build --no-incremental
+          dotnet-coverage collect 'dotnet test' -f xml  -o 'coverage.xml'
+          ..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
