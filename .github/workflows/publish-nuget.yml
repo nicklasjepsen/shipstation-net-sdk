@@ -22,7 +22,7 @@ jobs:
         with:
           dotnet-version: 6.x
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore ShipStations.NetSdk/ShipStation.NetSdk.sln
 
       - name: Build
         run: dotnet build ShipStations.NetSdk/ShipStation.NetSdk.sln --configuration Release --no-restore
