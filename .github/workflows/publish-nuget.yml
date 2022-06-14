@@ -11,6 +11,8 @@ jobs:
   build:
     env:
       BUILD_CONFIG: 'Release'
+      SOLUTION: 'ShipStation.NetSdk/ShipStation.NetSdk.sln'
+      PROJECT: 'ShipStation.NetSdk/ShipStation.NetSdk/ShipStation.NetSdk.csproj'
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
@@ -22,10 +24,10 @@ jobs:
         with:
           dotnet-version: 6.x
       - name: Install dependencies
-        run: dotnet restore ShipStations.NetSdk/ShipStation.NetSdk.sln
+        run: dotnet restore $SOLUTION
 
       - name: Build
-        run: dotnet build ShipStations.NetSdk/ShipStation.NetSdk.sln --configuration Release --no-restore
+        run: dotnet build $SOLUTION --configuration Release --no-restore
 
   # This workflow contains a single job called "build"
   publish_nuget:
@@ -37,5 +39,5 @@ jobs:
       - name: Publish NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
-          PROJECT_FILE_PATH: ShipStations.NetSdk/ShipStation.NetSdk/ShipStation.NetSdk.csproj
+          PROJECT_FILE_PATH: $PROJECT
           PACKAGE_NAME: ShipStation.NetSdk
