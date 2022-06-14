@@ -24,10 +24,10 @@ jobs:
         with:
           dotnet-version: 6.x
       - name: Install dependencies
-        run: dotnet restore $SOLUTION
+        run: dotnet restore $env:SOLUTION
 
       - name: Build
-        run: dotnet build $SOLUTION --configuration Release --no-restore
+        run: dotnet build $env:SOLUTION --configuration Release --no-restore
 
   # This workflow contains a single job called "build"
   publish_nuget:
@@ -39,5 +39,5 @@ jobs:
       - name: Publish NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
-          PROJECT_FILE_PATH: $PROJECT
+          PROJECT_FILE_PATH: $env:PROJECT
           PACKAGE_NAME: ShipStation.NetSdk
