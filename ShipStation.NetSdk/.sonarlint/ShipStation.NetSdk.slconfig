@@ -1,0 +1,15 @@
+{
+  "ServerUri": "https://sonarcloud.io/",
+  "Organization": {
+    "Key": "nicklasjepsen",
+    "Name": "Nicklas Møller Jepsen"
+  },
+  "ProjectKey": "nicklasjepsen_shipstation-net-sdk",
+  "ProjectName": "shipstation-net-sdk",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AXj_1iDH063T1OJc48cy",
+      "ProfileTimestamp": "2022-03-31T10:15:41Z"
+    }
+  }
+}
