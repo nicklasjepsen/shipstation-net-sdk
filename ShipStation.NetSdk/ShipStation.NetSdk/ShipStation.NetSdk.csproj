@@ -5,6 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>..\.sonarlint\nicklasjepsen_shipstation-net-sdkcsharp.ruleset</CodeAnalysisRuleSet>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Nicklas Møller Jepsen</Authors>
+    <Description>A .NET 6 SDK for the ShipStation API.</Description>
+    <PackageProjectUrl>https://github.com/nicklasjepsen/shipstation-net-sdk</PackageProjectUrl>
+    <PackageTags>ShipStation</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
