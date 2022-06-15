@@ -19,6 +19,6 @@ jobs:
     - name: Pack
       run: dotnet pack ShipStation.NetSdk/ShipStation.NetSdk.sln --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push
-      run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push ShipStation.NetSdk.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
       env:
         GITHUB_TOKEN: ${{ secrets.NUGET_API_KEY }}
