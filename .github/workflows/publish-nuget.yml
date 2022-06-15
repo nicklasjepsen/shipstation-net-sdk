@@ -27,7 +27,7 @@ jobs:
         run: dotnet restore $env:SOLUTION
 
       - name: Build
-        run: dotnet build $env:SOLUTION --configuration Release --no-restore -p:PackageVersion=$(BUILD_TIMESTAMP)
+        run: dotnet build $env:SOLUTION --configuration Release --no-restore -p:PackageVersion=$env:BUILD_TIMESTAMP
 
   # This workflow contains a single job called "build"
   publish_nuget:
