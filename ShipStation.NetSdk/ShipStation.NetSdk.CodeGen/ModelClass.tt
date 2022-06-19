@@ -1,0 +1,26 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="Microsoft.VisualStudio.Interop" #>
+<#@ import namespace="ShipStation.NetSdk.CodeGen" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
+
+namespace ShipStation.NetSdk.Api
+{
+    public class <#= _className #>
+    {
+<# 
+    foreach (var item in _props) {
+#>        
+        /// <summary>
+        /// <#= item.IsRequired ? "(Required) " : "(Optional) " + item.Description #>
+        /// </summary>
+        [JsonProperty("<#= item.Name #>")]
+        public <#= item.DataTypeName #> <#= item.Name.FirstCharToUpper() #> { get; set; }
+<#
+    }
+#>
+    }
+}

@@ -5,40 +5,9 @@ using System.Net.Http.Json;
 namespace ShipStation.NetSdk.Tests
 {
     [ExcludeFromCodeCoverage]
-    public class ShipStationServiceFixture : IDisposable
-    {
-        public string BaseUrl = "https://ssapi.shipstation.com/";
-        private MockRepository _mockRepository;
-        public Mock<HttpMessageHandler> HandlerMock { get; }
-        public HttpClient? MagicHttpClient { get; set; }
-
-        public ShipStationService ShipStationService
-        {
-            get
-            {
-                MagicHttpClient = new HttpClient(HandlerMock.Object);
-                MagicHttpClient.BaseAddress = new Uri(BaseUrl);
-                return new ShipStationService(MagicHttpClient);
-            }
-        }
-
-        public ShipStationServiceFixture()
-        {
-            _mockRepository = new MockRepository(MockBehavior.Default);
-            HandlerMock = _mockRepository.Create<HttpMessageHandler>();
-        }
-
-        public void Dispose()
-        {
-            // ... clean up test data from the database ...
-        }
-
-    }
-
-    [ExcludeFromCodeCoverage]
     public class ShipStationServiceTests : IClassFixture<ShipStationServiceFixture>
     {
-        readonly ShipStationServiceFixture _fixture;
+        private readonly ShipStationServiceFixture _fixture;
 
         public ShipStationServiceTests(ShipStationServiceFixture fixture)
         {
