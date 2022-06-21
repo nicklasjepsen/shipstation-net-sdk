@@ -1,0 +1,45 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System.Net.Http.Json;
+
+namespace ShipStation.NetSdk.Api
+{
+    public class ShipStationService
+    {
+        public static class Endpoint
+        {
+            public const string ShipmentsGetRates = "shipments/getrates";
+        }
+
+        private readonly HttpClient _api;
+
+        public ShipStationService(HttpClient api)
+        {
+            _api = api;
+        }
+
+<# 
+        foreach (var item in _scrapeResults.Where(x => x.HttpMethod == HttpMethod.Post)) {
+#>
+        public async <#= item.MethodName.MethodReturnTypeString #> <#= item.MethodName.Name #>(<#= item.MethodName.ModelClassName #> model)
+        {
+            if (model == null) throw new ArgumentNullException(nameof(model));
+            var response = await _api.PostAsJsonAsync(Endpoint.ShipmentsGetRates, model);
+<#
+            if (!item.MethodName.VoidReturnType)
+            {
+#>
+            return await response.Content.ReadFromJsonAsync<<#= item.MethodName.ReturnClassName #>>();
+<#
+            }
+#>
+        }
+
+<#
+        }
+#>
+}
+}

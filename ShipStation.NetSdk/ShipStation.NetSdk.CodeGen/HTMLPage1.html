@@ -1,0 +1,1017 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Add funds to carrier account | ShipStation</title>
+    <meta content="utf-8" http-equiv="encoding">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.shipstation.com/docs/api/carriers/add-funds/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ShipStation">
+    <meta name="twitter:creator" content="@ShipStation">
+    <meta name="twitter:title" content="Add funds to carrier account">
+    <meta name="twitter:url" content="https://www.shipstation.com/docs/api/carriers/add-funds/">
+    <meta name="twitter:image" content="https://www.shipstation.com/docs/api/img/media/card-square.png?v=2">
+    <meta name="twitter:description" content="Learn how to add funds to a carrier account using the ShipStation developer API.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" name="author" content="ShipStation">
+    <meta property="og:url" content="https://www.shipstation.com/docs/api/carriers/add-funds/">
+    <meta property="og:title" name="title" content="Add funds to carrier account" class="swiftype" data-type="string">
+    <meta property="og:image" name="image" content="https://www.shipstation.com/docs/api/img/media/card-square.png?v=2" class="swiftype" data-type="enum">
+    <meta property="og:description" name="description" content="Learn how to add funds to a carrier account using the ShipStation developer API." class="swiftype" data-type="text">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Carriers">
+    <meta property="article:published_time" name="published_at" content="2021-09-21T20:41:16.025Z" class="swiftype" data-type="date">
+    <meta property="article:modified_time" name="updated_at" content="2021-09-21T20:41:16.025Z" class="swiftype" data-type="date">
+    <meta property="article:tag" name="tags" content="shipstation api" class="swiftype" data-type="string">
+    <meta property="article:tag" name="tags" content="shipstation rest api" class="swiftype" data-type="string">
+    <meta property="article:tag" name="tags" content="shipstation xml api" class="swiftype" data-type="string">
+    <meta property="article:tag" name="tags" content="automate shipstation" class="swiftype" data-type="string">
+    <meta property="article:tag" name="tags" content="script shipstation" class="swiftype" data-type="string">
+    <script type="application/ld+json">
+        [{
+        "@context": "http://schema.org",
+        "@type": ["Service", "WebAPI"],
+        "name": "ShipStation",
+        "serviceType": "API",
+        "category": "Internet Service > API",
+        "url": "https://www.shipstation.com/",
+        "image": "https://www.shipstation.com/docs/api/img/media/card-square.png?v=2",
+        "logo": "https://www.shipstation.com/docs/api/img/media/logo-square.png?v=2",
+        "documentation": {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "name": "ShipStation API",
+        "headline": "ShipStation Developer Documentation",
+        "description": "Automate your order fulfillment process with the ShipStation developer API",
+        "keywords": "shipstation api, shipstation rest api, shipstation xml api, automate shipstation, script shipstation",
+        "url": "https://www.shipstation.com/docs/api/",
+        "image": "https://www.shipstation.com/docs/api/img/media/card-square.png?v=2",
+        "isAccessibleForFree": true,
+        "targetPlatform": "http",
+        "dateCreated": "2021-09-21T20:41:16.025Z",
+        "dateModified": "2021-09-21T20:41:16.025Z",
+        "author": {
+        "@type": "Organization",
+        "name": "ShipStation",
+        "telephone": "1 (512) 485-4282",
+        "email": "info@shipstation.com",
+        "url": "https://www.shipstation.com/",
+        "logo": "https://www.shipstation.com/docs/api/img/media/logo-square.png?v=2"
+        }
+        },
+        "termsOfService": "https://www.shipstation.com/terms-of-service",
+        "description": "Automate your order fulfillment process with the ShipStation developer API",
+        "provider": {
+        "@type": "Organization",
+        "name": "ShipStation",
+        "telephone": "1 (512) 485-4282",
+        "email": "info@shipstation.com",
+        "url": "https://www.shipstation.com/",
+        "logo": "https://www.shipstation.com/docs/api/img/media/logo-square.png?v=2"
+        }
+        },
+        {
+        "@context": "http://schema.org",
+        "@type": "APIReference",
+        "name": "ShipStation",
+        "headline": "Add funds to carrier account",
+        "description": "Learn how to add funds to a carrier account using the ShipStation developer API.",
+        "keywords": "shipstation api, shipstation rest api, shipstation xml api, automate shipstation, script shipstation",
+        "url": "https://www.shipstation.com/docs/api/carriers/add-funds/",
+        "image": "https://www.shipstation.com/docs/api/img/media/card-square.png?v=2",
+        "isAccessibleForFree": true,
+        "targetPlatform": "rest",
+        "articleSection": "Carriers",
+        "dateCreated": "2021-09-21T20:41:16.025Z",
+        "dateModified": "2021-09-21T20:41:16.025Z",
+        "author": {
+        "@type": "Organization",
+        "name": "ShipStation",
+        "telephone": "1 (512) 485-4282",
+        "email": "info@shipstation.com",
+        "url": "https://www.shipstation.com/",
+        "logo": "https://www.shipstation.com/docs/api/img/media/logo-square.png?v=2"
+        }
+        }]
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/docs/api/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/docs/api/img/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/docs/api/img/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/docs/api/img/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/docs/api/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/docs/api/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/docs/api/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/docs/api/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/docs/api/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/docs/api/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/docs/api/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/docs/api/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/docs/api/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="mask-icon" href="/docs/api/img/favicons/safari-pinned-tab.svg" color="#45aaf2">
+    <meta name="apple-mobile-web-app-title" content="ShipStation">
+    <meta name="application-name" content="ShipStation">
+    <meta name="msapplication-TileColor" content="#45aaf2">
+    <meta name="msapplication-TileImage" content="/docs/api/img/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/docs/api/browserconfig.xml">
+    <meta name="theme-color" content="#45aaf2">
+    <link rel="manifest" href="/docs/api/site.webmanifest">
+    <script>
+        !function () {
+            var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+                analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"]; analytics.factory = function (t) { return function () { var e = Array.prototype.slice.call(arguments); e.unshift(t); analytics.push(e); return analytics } }; for (var t = 0; t < analytics.methods.length; t++) { var e = analytics.methods[t]; analytics[e] = analytics.factory(e) } analytics.load = function (t, e) { var n = document.createElement("script"); n.type = "text/javascript"; n.async = !0; n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(n, a); analytics._loadOptions = e }; analytics.SNIPPET_VERSION = "4.1.0";
+
+            }
+        }();
+    </script>
+    <link rel="stylesheet" type="text/css" href="/docs/api/css/main.css?v=21">
+</head>
+<body id="carriers-add-funds">
+    <header id="site-header">
+        <div id="header-wrapper">
+            <a class="site-logo" href="/">
+                <img class="logo" src="/docs/api/img/logos/shipstation.svg" alt="ShipStation">
+            </a>
+            <input id="site-header-menu-toggle" class="menu-toggle" type="checkbox">
+            <label for="site-header-menu-toggle" class="menu-button-icon"></label>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="has-sub-menu">
+                        <a href="/features/">Features</a>
+                        <ul class="nav-sub-menu">
+                            <li>
+                                <a href="/features-v3/">
+                                    <span class="label">Overview</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/features-v3/order-management/">
+                                    <span class="label">Order Management</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/features-v3/shipping/">
+                                    <span class="label">Shipping</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/features-v3/branding/">
+                                    <span class="label">Branding</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/features-v3/inventory-management/">
+                                    <span class="label">Inventory Management</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/partners/">
+                                    <span class="label">Integrations &#x26; Partners</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/partners/">Partners</a>
+                    </li>
+                    <li>
+                        <a href="/pricing/">Pricing</a>
+                    </li>
+                    <li class="schedule-a-demo">
+                        <a href="/pricing/">Schedule a Demo</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="user-menu">
+                <li>
+                    <a id="hear-our-ad" href="/welcome-podcast-listener/"><span>Hear our Ad?</span></a>
+                </li>
+                <li class="login">
+                    <a href="https://ss.shipstation.com/">Login</a>
+                </li>
+                <li>
+                    <a class="button button-primary button-small" href="/step1/">Try it Free</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div id="search-bar">
+        <div class="container">
+            <form id="site-search-form" class="invisible search-form" method="get" action="https://www.google.com/search">
+                <label for="site-search" class="visually-hidden">ShipStation Docs Search</label>
+                <input id="site-search" class="search st-default-search-input" name="q" type="search" placeholder="Search">
+                <input type="hidden" name="as_sitesearch" value="www.shipstation.com">
+            </form>
+        </div>
+    </div>
+    <div class="page-background">
+        <div id="docs-page">
+            <nav id="docs-nav">
+                <label for="docs-nav-menu-toggle" class="menu-button-icon"></label>
+                <input id="docs-nav-menu-toggle" class="menu-toggle" type="checkbox">
+                <ul class="group-list">
+                    <li>
+                        <div class="group">Start Here</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="2" class="page" href="/docs/api/" data-group-id="1" data-subgroup-id="1">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a id="3" class="page" href="/docs/api/requirements/" data-group-id="1" data-subgroup-id="1">
+                                    Requirements
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Accounts</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="5" class="page" href="/docs/api/accounts/create/" data-group-id="4" data-subgroup-id="4">
+                                    Register Account
+                                </a>
+                            </li>
+                            <li>
+                                <a id="6" class="page" href="/docs/api/accounts/list-tags/" data-group-id="4" data-subgroup-id="4">
+                                    List Account Tags
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Carriers</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="8" class="page selected" href="/docs/api/carriers/add-funds/" data-group-id="7" data-subgroup-id="7">
+                                    Add Funds to Carrier
+                                </a>
+                            </li>
+                            <li>
+                                <a id="9" class="page" href="/docs/api/carriers/get/" data-group-id="7" data-subgroup-id="7">
+                                    Get Carrier Info
+                                </a>
+                            </li>
+                            <li>
+                                <a id="10" class="page" href="/docs/api/carriers/list/" data-group-id="7" data-subgroup-id="7">
+                                    List Carriers
+                                </a>
+                            </li>
+                            <li>
+                                <a id="11" class="page" href="/docs/api/carriers/list-packages/" data-group-id="7" data-subgroup-id="7">
+                                    List Packages
+                                </a>
+                            </li>
+                            <li>
+                                <a id="12" class="page" href="/docs/api/carriers/list-services/" data-group-id="7" data-subgroup-id="7">
+                                    List Services
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Customers</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="14" class="page" href="/docs/api/customers/get-customer/" data-group-id="13" data-subgroup-id="13">
+                                    Get Customer Info
+                                </a>
+                            </li>
+                            <li>
+                                <a id="15" class="page" href="/docs/api/customers/list/" data-group-id="13" data-subgroup-id="13">
+                                    List Customers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Fulfillments</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="17" class="page" href="/docs/api/fulfillments/list/" data-group-id="16" data-subgroup-id="16">
+                                    List Fulfillments
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Orders</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="19" class="page" href="/docs/api/orders/add-tag/" data-group-id="18" data-subgroup-id="18">
+                                    Add Tag
+                                </a>
+                            </li>
+                            <li>
+                                <a id="20" class="page" href="/docs/api/orders/assign-user/" data-group-id="18" data-subgroup-id="18">
+                                    Assign User
+                                </a>
+                            </li>
+                            <li>
+                                <a id="21" class="page" href="/docs/api/orders/create-label/" data-group-id="18" data-subgroup-id="18">
+                                    Create Label For Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="22" class="page" href="/docs/api/orders/create-update-multiple-orders/" data-group-id="18" data-subgroup-id="18">
+                                    Create/Update Multiple Orders
+                                </a>
+                            </li>
+                            <li>
+                                <a id="23" class="page" href="/docs/api/orders/create-update-order/" data-group-id="18" data-subgroup-id="18">
+                                    Create/Update Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="24" class="page" href="/docs/api/orders/delete/" data-group-id="18" data-subgroup-id="18">
+                                    Delete Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="25" class="page" href="/docs/api/orders/get-order/" data-group-id="18" data-subgroup-id="18">
+                                    Get Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="26" class="page" href="/docs/api/orders/hold-order-until/" data-group-id="18" data-subgroup-id="18">
+                                    Hold Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="27" class="page" href="/docs/api/orders/list-by-tag/" data-group-id="18" data-subgroup-id="18">
+                                    List By Tag
+                                </a>
+                            </li>
+                            <li>
+                                <a id="28" class="page" href="/docs/api/orders/list/" data-group-id="18" data-subgroup-id="18">
+                                    List
+                                </a>
+                            </li>
+                            <li>
+                                <a id="29" class="page" href="/docs/api/orders/mark-as-shipped/" data-group-id="18" data-subgroup-id="18">
+                                    Mark Shipped
+                                </a>
+                            </li>
+                            <li>
+                                <a id="30" class="page" href="/docs/api/orders/remove-tag/" data-group-id="18" data-subgroup-id="18">
+                                    Remove Tag
+                                </a>
+                            </li>
+                            <li>
+                                <a id="31" class="page" href="/docs/api/orders/restore-from-hold/" data-group-id="18" data-subgroup-id="18">
+                                    Restore From Hold
+                                </a>
+                            </li>
+                            <li>
+                                <a id="32" class="page" href="/docs/api/orders/unassign-user/" data-group-id="18" data-subgroup-id="18">
+                                    Unassign User
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Products</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="34" class="page" href="/docs/api/products/get-product/" data-group-id="33" data-subgroup-id="33">
+                                    Get Product Info
+                                </a>
+                            </li>
+                            <li>
+                                <a id="35" class="page" href="/docs/api/products/list/" data-group-id="33" data-subgroup-id="33">
+                                    List Products
+                                </a>
+                            </li>
+                            <li>
+                                <a id="36" class="page" href="/docs/api/products/update/" data-group-id="33" data-subgroup-id="33">
+                                    Update Product
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Shipments</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="38" class="page" href="/docs/api/shipments/create-label/" data-group-id="37" data-subgroup-id="37">
+                                    Create Label
+                                </a>
+                            </li>
+                            <li>
+                                <a id="39" class="page" href="/docs/api/shipments/get-rates/" data-group-id="37" data-subgroup-id="37">
+                                    Get Rates
+                                </a>
+                            </li>
+                            <li>
+                                <a id="40" class="page" href="/docs/api/shipments/list/" data-group-id="37" data-subgroup-id="37">
+                                    List Shipments
+                                </a>
+                            </li>
+                            <li>
+                                <a id="41" class="page" href="/docs/api/shipments/void-label/" data-group-id="37" data-subgroup-id="37">
+                                    Void A Label
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Stores</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="43" class="page" href="/docs/api/stores/deactivate/" data-group-id="42" data-subgroup-id="42">
+                                    Deactivate a Store
+                                </a>
+                            </li>
+                            <li>
+                                <a id="44" class="page" href="/docs/api/stores/get-refresh-status/" data-group-id="42" data-subgroup-id="42">
+                                    Get Store Refresh Rate
+                                </a>
+                            </li>
+                            <li>
+                                <a id="45" class="page" href="/docs/api/stores/get-store/" data-group-id="42" data-subgroup-id="42">
+                                    Get Store Info
+                                </a>
+                            </li>
+                            <li>
+                                <a id="46" class="page" href="/docs/api/stores/list-marketplaces/" data-group-id="42" data-subgroup-id="42">
+                                    List Marketplaces
+                                </a>
+                            </li>
+                            <li>
+                                <a id="47" class="page" href="/docs/api/stores/list/" data-group-id="42" data-subgroup-id="42">
+                                    List Stores
+                                </a>
+                            </li>
+                            <li>
+                                <a id="48" class="page" href="/docs/api/stores/reactivate/" data-group-id="42" data-subgroup-id="42">
+                                    Reactivate a Store
+                                </a>
+                            </li>
+                            <li>
+                                <a id="49" class="page" href="/docs/api/stores/refresh/" data-group-id="42" data-subgroup-id="42">
+                                    Refresh a Store
+                                </a>
+                            </li>
+                            <li>
+                                <a id="50" class="page" href="/docs/api/stores/update/" data-group-id="42" data-subgroup-id="42">
+                                    Update a Store
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Users</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="52" class="page" href="/docs/api/users/list/" data-group-id="51" data-subgroup-id="51">
+                                    List Users
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Warehouses</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="54" class="page" href="/docs/api/warehouses/create/" data-group-id="53" data-subgroup-id="53">
+                                    Create a Warehouse
+                                </a>
+                            </li>
+                            <li>
+                                <a id="55" class="page" href="/docs/api/warehouses/delete/" data-group-id="53" data-subgroup-id="53">
+                                    Delete a Warehouse
+                                </a>
+                            </li>
+                            <li>
+                                <a id="56" class="page" href="/docs/api/warehouses/get/" data-group-id="53" data-subgroup-id="53">
+                                    Get Warehouse Info
+                                </a>
+                            </li>
+                            <li>
+                                <a id="57" class="page" href="/docs/api/warehouses/list/" data-group-id="53" data-subgroup-id="53">
+                                    List Warehouses
+                                </a>
+                            </li>
+                            <li>
+                                <a id="58" class="page" href="/docs/api/warehouses/update/" data-group-id="53" data-subgroup-id="53">
+                                    Update a Warehouse
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Webhooks</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="60" class="page" href="/docs/api/webhooks/list/" data-group-id="59" data-subgroup-id="59">
+                                    List Webhooks
+                                </a>
+                            </li>
+                            <li>
+                                <a id="61" class="page" href="/docs/api/webhooks/subscribe/" data-group-id="59" data-subgroup-id="59">
+                                    Subscribe to a Webhook
+                                </a>
+                            </li>
+                            <li>
+                                <a id="62" class="page" href="/docs/api/webhooks/unsubscribe/" data-group-id="59" data-subgroup-id="59">
+                                    Unsubscribe to a Webhook
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Models</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="64" class="page" href="/docs/api/models/address/" data-group-id="63" data-subgroup-id="63">
+                                    Address
+                                </a>
+                            </li>
+                            <li>
+                                <a id="65" class="page" href="/docs/api/models/advanced-options/" data-group-id="63" data-subgroup-id="63">
+                                    Advanced Options
+                                </a>
+                            </li>
+                            <li>
+                                <a id="66" class="page" href="/docs/api/models/customs-item/" data-group-id="63" data-subgroup-id="63">
+                                    Customs Item
+                                </a>
+                            </li>
+                            <li>
+                                <a id="67" class="page" href="/docs/api/models/dimensions/" data-group-id="63" data-subgroup-id="63">
+                                    Dimensions
+                                </a>
+                            </li>
+                            <li>
+                                <a id="68" class="page" href="/docs/api/models/insurance-options/" data-group-id="63" data-subgroup-id="63">
+                                    Insurance Options
+                                </a>
+                            </li>
+                            <li>
+                                <a id="69" class="page" href="/docs/api/models/international-options/" data-group-id="63" data-subgroup-id="63">
+                                    International Options
+                                </a>
+                            </li>
+                            <li>
+                                <a id="70" class="page" href="/docs/api/models/item-option/" data-group-id="63" data-subgroup-id="63">
+                                    Item Option
+                                </a>
+                            </li>
+                            <li>
+                                <a id="71" class="page" href="/docs/api/models/order-item/" data-group-id="63" data-subgroup-id="63">
+                                    Order Item
+                                </a>
+                            </li>
+                            <li>
+                                <a id="72" class="page" href="/docs/api/models/order/" data-group-id="63" data-subgroup-id="63">
+                                    Order
+                                </a>
+                            </li>
+                            <li>
+                                <a id="73" class="page" href="/docs/api/models/product-category/" data-group-id="63" data-subgroup-id="63">
+                                    Product Category
+                                </a>
+                            </li>
+                            <li>
+                                <a id="74" class="page" href="/docs/api/models/product-tag/" data-group-id="63" data-subgroup-id="63">
+                                    Product Tag
+                                </a>
+                            </li>
+                            <li>
+                                <a id="75" class="page" href="/docs/api/models/product/" data-group-id="63" data-subgroup-id="63">
+                                    Product
+                                </a>
+                            </li>
+                            <li>
+                                <a id="76" class="page" href="/docs/api/models/webhook/" data-group-id="63" data-subgroup-id="63">
+                                    Webhook
+                                </a>
+                            </li>
+                            <li>
+                                <a id="77" class="page" href="/docs/api/models/weight/" data-group-id="63" data-subgroup-id="63">
+                                    Weight
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Service</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="79" class="page" href="https://help.shipstation.com/hc/en-us/categories/360003234831-Frequently-Asked-Questions" data-group-id="78" data-subgroup-id="78">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a id="80" class="page" href="https://help.shipstation.com/hc/en-us/requests/new" data-group-id="78" data-subgroup-id="78">
+                                    Support
+                                </a>
+                            </li>
+                            <li>
+                                <a id="81" class="page" href="https://status.shipstation.com/" data-group-id="78" data-subgroup-id="78">
+                                    API Status
+                                </a>
+                            </li>
+                            <li>
+                                <a id="82" class="page" href="/terms-of-service/" data-group-id="78" data-subgroup-id="78">
+                                    Terms of Service
+                                </a>
+                            </li>
+                            <li>
+                                <a id="83" class="page" href="/privacy-policy/" data-group-id="78" data-subgroup-id="78">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="group">Community</div>
+                        <ul class="page-list">
+                            <li>
+                                <a id="85" class="page" href="/blog/" data-group-id="84" data-subgroup-id="84">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main id="docs-content" data-swiftype-name="body" data-swiftype-type="text">
+                <article>
+                    <div class="section">
+                        <div class="section-group left-group">
+                            <h1>Add funds to carrier account</h1>
+                            <p><b>Requires approval from <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbdacbd2c8cecbcbd4c9cffbc8d3d2cbc8cfdacfd2d4d595d8d4d6">[email&#160;protected]</a> before use...</b></p>
+                            <p>Adds funds to a carrier account using the payment information on file. The body of this request should specify the following attributes:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Data Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>carrierCode</code></td>
+                                        <td>string, required</td>
+                                        <td>The carrier to add funds to.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>amount</code></td>
+                                        <td>number, required</td>
+                                        <td>The dollar amount to add to the account.  The minimum value that can be added is $10.00.  The maximum value is $10,000.00.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h2><a id="example-request" class="heading-anchor" aria-hidden="true"></a>Example Request<a href="#example-request" class="heading-anchor-link" aria-hidden="true"></a></h2>
+                            <div class="code-wrapper">
+                                <pre class="language-http http"><code class="language-http http line-numbers">POST /carriers/addfunds HTTP/1.1
+Host: ssapi.shipstation.com
+Authorization: __YOUR_AUTH_HERE__
+Content-Type: application/json
+
+{
+  "carrierCode": "fedex",
+  "amount": 20
+}
+</code></pre><pre class="language-bash curl hidden"><code class="language-bash curl line-numbers">curl -iX POST https://ssapi.shipstation.com/carriers/addfunds \
+-H 'Authorization: __YOUR_AUTH_HERE__' \
+-H 'Content-Type: application/json' \
+-d '{
+  "carrierCode": "fedex",
+  "amount": 20
+}'</code></pre><pre class="language-powershell powershell hidden"><code class="language-powershell powershell line-numbers">$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Host", "ssapi.shipstation.com")
+$headers.Add("Authorization", "__YOUR_AUTH_HERE__")
+$headers.Add("Content-Type", "application/json")
+
+$body = "{`n  `"carrierCode`": `"fedex`",`n  `"amount`": 20`n}"
+
+$response = Invoke-RestMethod 'https://ssapi.shipstation.com/carriers/addfunds' -Method 'POST' -Headers $headers -Body $body
+$response | ConvertTo-Json</code></pre><pre class="language-javascript javascript-fetch hidden"><code class="language-javascript javascript-fetch line-numbers">var myHeaders = new Headers();
+myHeaders.append("Host", "ssapi.shipstation.com");
+myHeaders.append("Authorization", "__YOUR_AUTH_HERE__");
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({"carrierCode":"fedex","amount":20});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://ssapi.shipstation.com/carriers/addfunds", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));</code></pre><pre class="language-javascript node-request hidden"><code class="language-javascript node-request line-numbers">var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://ssapi.shipstation.com/carriers/addfunds',
+  'headers': {
+    'Host': 'ssapi.shipstation.com',
+    'Authorization': '__YOUR_AUTH_HERE__',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({"carrierCode":"fedex","amount":20})
+
+};
+request(options, function (error, response) { 
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+</code></pre><pre class="language-php php hidden"><code class="language-php php line-numbers">&#x3C;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://ssapi.shipstation.com/carriers/addfunds",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS =>"{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}",
+  CURLOPT_HTTPHEADER => array(
+    "Host: ssapi.shipstation.com",
+    "Authorization: __YOUR_AUTH_HERE__",
+    "Content-Type: application/json"
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+</code></pre><pre class="language-python python hidden"><code class="language-python python line-numbers">import requests
+
+url = "https://ssapi.shipstation.com/carriers/addfunds"
+
+payload = "{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}"
+headers = {
+  'Host': 'ssapi.shipstation.com',
+  'Authorization': '__YOUR_AUTH_HERE__',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+</code></pre><pre class="language-ruby ruby hidden"><code class="language-ruby ruby line-numbers">require "uri"
+require "net/http"
+
+url = URI("https://ssapi.shipstation.com/carriers/addfunds")
+
+https = Net::HTTP.new(url.host, url.port);
+https.use_ssl = true
+
+request = Net::HTTP::Post.new(url)
+request["Host"] = "ssapi.shipstation.com"
+request["Authorization"] = "__YOUR_AUTH_HERE__"
+request["Content-Type"] = "application/json"
+request.body = "{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}"
+
+response = https.request(request)
+puts response.read_body
+</code></pre><pre class="language-csharp csharp hidden"><code class="language-csharp csharp line-numbers">var client = new RestClient("https://ssapi.shipstation.com/carriers/addfunds");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Host", "ssapi.shipstation.com");
+request.AddHeader("Authorization", "__YOUR_AUTH_HERE__");
+request.AddHeader("Content-Type", "application/json");
+request.AddParameter("application/json", "{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}",  ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);</code></pre><pre class="language-java java hidden"><code class="language-java java line-numbers">OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}");
+Request request = new Request.Builder()
+  .url("https://ssapi.shipstation.com/carriers/addfunds")
+  .method("POST", body)
+  .addHeader("Host", "ssapi.shipstation.com")
+  .addHeader("Authorization", "__YOUR_AUTH_HERE__")
+  .addHeader("Content-Type", "application/json")
+  .build();
+Response response = client.newCall(request).execute();</code></pre><pre class="language-go native hidden"><code class="language-go native line-numbers">package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://ssapi.shipstation.com/carriers/addfunds"
+  method := "POST"
+
+  payload := strings.NewReader("{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}")
+
+  client := &#x26;http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Host", "ssapi.shipstation.com")
+  req.Header.Add("Authorization", "__YOUR_AUTH_HERE__")
+  req.Header.Add("Content-Type", "application/json")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}</code></pre><pre class="language-objectivec objectivec hidden"><code class="language-objectivec objectivec line-numbers">#import &#x3C;Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://ssapi.shipstation.com/carriers/addfunds"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSDictionary *headers = @{
+  @"Host": @"ssapi.shipstation.com",
+  @"Authorization": @"__YOUR_AUTH_HERE__",
+  @"Content-Type": @"application/json"
+};
+
+[request setAllHTTPHeaderFields:headers];
+NSData *postData = [[NSData alloc] initWithData:[@"{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}" dataUsingEncoding:NSUTF8StringEncoding]];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"POST"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&#x26;parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);</code></pre><pre class="language-swift swift hidden"><code class="language-swift swift line-numbers">import Foundation
+
+var semaphore = DispatchSemaphore (value: 0)
+
+let parameters = "{\n  \"carrierCode\": \"fedex\",\n  \"amount\": 20\n}"
+let postData = parameters.data(using: .utf8)
+
+var request = URLRequest(url: URL(string: "https://ssapi.shipstation.com/carriers/addfunds")!,timeoutInterval: Double.infinity)
+request.addValue("ssapi.shipstation.com", forHTTPHeaderField: "Host")
+request.addValue("__YOUR_AUTH_HERE__", forHTTPHeaderField: "Authorization")
+request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+request.httpMethod = "POST"
+request.httpBody = postData
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in 
+  guard let data = data else {
+    print(String(describing: error))
+    return
+  }
+  print(String(data: data, encoding: .utf8)!)
+  semaphore.signal()
+}
+
+task.resume()
+semaphore.wait()
+</code></pre><form class="invisible code-toolbar"><button class="button-small code-copy-button">Copy</button><select class="code-syntax-list"><option value="http" selected class="http">HTTP</option><option value="curl" class="bash">Curl</option><option value="powershell" class="powershell">PowerShell</option><option value="javascript-fetch" class="javascript">JavaScript</option><option value="node-request" class="javascript">Node.js</option><option value="php" class="php">PHP</option><option value="python" class="python">Python</option><option value="ruby" class="ruby">Ruby</option><option value="csharp" class="csharp">C#</option><option value="java" class="java">Java</option><option value="native" class="go">Go</option><option value="objectivec" class="objectivec">Objective-C</option><option value="swift" class="swift">Swift</option></select></form>
+                            </div>
+                            <h2><a id="example-response" class="heading-anchor" aria-hidden="true"></a>Example Response<a href="#example-response" class="heading-anchor-link" aria-hidden="true"></a></h2>
+                            <div class="code-wrapper">
+                                <pre><code class="language-json line-numbers">{
+  "name": "Stamps.com",
+  "code": "stamps_com",
+  "accountNumber": "SS123",
+  "requiresFundedAccount": true,
+  "balance": 24.14
+}
+</code></pre><form class="invisible code-toolbar"><button class="button-small code-copy-button">Copy</button></form>
+                            </div>
+                        </div><div class="section-group right-group"><nav class="toc"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#">Add funds to carrier account</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#example-request">Example Request</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#example-response">Example Response</a></li></ol></li></ol></nav></div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <div class="mobile-logo">
+                    <img class="logo" src="/docs/api/img/logos/shipstation.svg" alt="ShipStation">
+                </div>
+                <div class="shipstation-info">
+                    <ul>
+                        <li>
+                            <a class="site-logo" href="/">
+                                <img class="logo" src="/docs/api/img/logos/shipstation.svg" alt="ShipStation">
+                            </a>
+                        </li>
+                        <li>
+                            <span>3800 N Lamar Blvd #220</span>
+                            <span>Austin, TX 78756 - 512.485.4282</span>
+                        </li>
+                        <li>
+                            Copyright © 2011-2020 ShipStation
+                        </li>
+                        <li class="privacy-policy">
+                            <a href="/privacy-policy/">Privacy Policy</a>
+                            <a href="https://info.shipstation.com/ccpa">Do Not Sell My Personal Information</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav-list">
+                    <ul>
+                        <li><a href="/features/">Features</a></li>
+                        <li><a href="/partners/">Partners</a></li>
+                        <li><a href="/pricing/">Pricing</a></li>
+                        <li><a href="/welcome-podcast-listener/">Heard Our Ad?</a></li>
+                        <li><a href="https://ss.shipstation.com/">Login</a></li>
+                        <li><a href="https://help.shipstation.com/hc/en-us">Support</a></li>
+                        <li><a href="/about-us/">About Shipstation</a></li>
+                        <li><a href="/careers/">Careers</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/press/">Press</a></li>
+                        <li><a href="/stories/">Stories</a></li>
+                        <li><a href="/webinars/">Videos/Webinars</a></li>
+                        <li><a href="/partners/">Integrations</a></li>
+                        <li><a href="/docs/api/">Developers</a></li>
+                        <li><a href="https://info.shipstation.com/refer-a-friend">Affiliates</a></li>
+                        <li><a href="/experts/">Ecommerce Experts</a></li>
+                        <li><a href="https://info.shipstation.com/contact-sales">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-site-info">
+                    <ul>
+                        <li>
+                            <span>3800 N Lamar Blvd #220</span>
+                            <span>Austin, TX 78756 - 512.485.4282</span>
+                        </li>
+                        <li>
+                            <span class="copyright">Copyright © 2011-2020 ShipStation</span>
+                        </li>
+                        <li class="privacy-policy">
+                            <a href="/privacy-policy/">Privacy Policy</a>
+                            <a href="https://info.shipstation.com/ccpa">Do Not Sell My Personal Information</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social-media-icons">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/ShipStation" class="social-media-icon twitter">
+                                <span class="visually-hidden">ShipStation on Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ShipStation/" class="social-media-icon facebook">
+                                <span class="visually-hidden">ShipStation on Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/shipstation/" class="social-media-icon linkedin">
+                                <span class="visually-hidden">ShipStation on LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/shipstation/" class="social-media-icon instagram">
+                                <span class="visually-hidden">ShipStation on Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script defer src="/docs/api/js/script.js?v=15"></script>
+    <script defer src="/docs/api/js/prism.min.js?v=6"></script>
+    <script type="text/javascript">
+        (function (w, d, t, u, n, s, e) {
+            w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+                (w[n].q = w[n].q || []).push(arguments);
+            }; s = d.createElement(t);
+            e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+        })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+        _st('install', 'ssxb4ay3RFpBsQEBvWsc', '2.0.0');
+    </script>
+    <script defer id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=394079e0-fe64-49af-af08-8786dd32499b"></script>
+
+</body>
+</html>
