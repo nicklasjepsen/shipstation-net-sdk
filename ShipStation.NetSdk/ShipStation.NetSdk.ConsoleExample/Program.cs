@@ -26,8 +26,22 @@ namespace ShipStation.NetSdk.ConsoleExample
             try
             {
                 var shipStation = host.Services.GetRequiredService<ShipStationService>();
-                var rates = await shipStation.GetRates(new RateRequest("fedex", "78703", new Weight(3, "ounces"),
-                    "US", "20500"));
+                var rateRequest = new RateRequest(
+                    "fedex", 
+                    "78703", 
+                    new Weight(
+                        3, 
+                        "ounces"
+                        ),
+                    "US", 
+                    "20500"
+                    )
+                {
+                    Dimensions = new Dimensions(17, 17, 6, "lbs"),
+                };
+                var rates = await shipStation.GetRates(rateRequest);
+                //var rates = await shipStation.GetRates(new RateRequest("fedex", "78703", new Weight(3, "ounces"),
+                //    "US", "20500"));
                 foreach (var rate in rates)
                 {
                     Console.WriteLine($"ServiceName: {rate.ServiceName}, serviceCode: {rate.ServiceCode}, shipment cost: {rate.ShipmentCost}, other cost: {rate.OtherCost}");
