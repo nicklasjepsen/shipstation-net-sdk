@@ -1,11 +1,12 @@
 ﻿using System.Net.Http.Headers;
 using Microsoft.Extensions.DependencyInjection;
+using ShipStation.NetSdk.Core;
 
 namespace ShipStation.NetSdk
 {
-    public static class ServiceCollectionExtensions
+    public static class Registration
     {
-        public static void AddShipStation(this IServiceCollection services, ShipStationOptions options)
+        public static void AddShipStationCore(this IServiceCollection services, ShipStationOptions options)
         {
             if(options == null)
                 throw new ArgumentNullException(nameof(options));
@@ -16,10 +17,10 @@ namespace ShipStation.NetSdk
             if (string.IsNullOrEmpty(options.ApiSecret))
                 throw new ArgumentException("ApiSecret must be set.");
 
-            services.AddHttpClient<ShipStationService>(client =>
+            services.AddHttpClient<IShipStationClient, ShipStationClient>(httpClient =>
             {
-                client.BaseAddress = new Uri(options.BaseUrl);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+                httpClient.BaseAddress = new Uri(options.BaseUrl);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
                     $"{options.ApiKey}:{options.ApiSecret}".Base64Encode());
             });
         }

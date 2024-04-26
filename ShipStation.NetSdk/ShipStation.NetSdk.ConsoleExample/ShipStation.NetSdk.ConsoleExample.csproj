@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UserSecretsId>fbb48ca1-0407-46e8-ae63-852fb1285379</UserSecretsId>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShipStation.NetSdk\ShipStation.NetSdk.csproj" />
+    <ProjectReference Include="..\ShipStation.NetSdk.Core\ShipStation.NetSdk.csproj" />
   </ItemGroup>
 
 </Project>

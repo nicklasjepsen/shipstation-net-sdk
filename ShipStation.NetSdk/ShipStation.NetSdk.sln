@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipStation.NetSdk", "ShipStation.NetSdk\ShipStation.NetSdk.csproj", "{E61A0AA1-4919-4A0C-AB86-7B3ACF933D3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipStation.NetSdk.ConsoleExample", "ShipStation.NetSdk.ConsoleExample\ShipStation.NetSdk.ConsoleExample.csproj", "{AAB1F5DB-875E-45A2-9D63-1B0A9BADC856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipStation.NetSdk.ConsoleExample", "ShipStation.NetSdk.ConsoleExample\ShipStation.NetSdk.ConsoleExample.csproj", "{AAB1F5DB-875E-45A2-9D63-1B0A9BADC856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipStation.NetSdk.Tests", "ShipStation.NetSdk.Tests\ShipStation.NetSdk.Tests.csproj", "{DE93DB00-8373-422A-964E-B6F2E492AD6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipStation.NetSdk.Tests", "ShipStation.NetSdk.Tests\ShipStation.NetSdk.Tests.csproj", "{DE93DB00-8373-422A-964E-B6F2E492AD6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipStation.NetSdk", "ShipStation.NetSdk.Core\ShipStation.NetSdk.csproj", "{053A9C67-C541-4A0C-A6BB-36F911530858}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E61A0AA1-4919-4A0C-AB86-7B3ACF933D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E61A0AA1-4919-4A0C-AB86-7B3ACF933D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E61A0AA1-4919-4A0C-AB86-7B3ACF933D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E61A0AA1-4919-4A0C-AB86-7B3ACF933D3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAB1F5DB-875E-45A2-9D63-1B0A9BADC856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AAB1F5DB-875E-45A2-9D63-1B0A9BADC856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAB1F5DB-875E-45A2-9D63-1B0A9BADC856}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{DE93DB00-8373-422A-964E-B6F2E492AD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE93DB00-8373-422A-964E-B6F2E492AD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE93DB00-8373-422A-964E-B6F2E492AD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053A9C67-C541-4A0C-A6BB-36F911530858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053A9C67-C541-4A0C-A6BB-36F911530858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053A9C67-C541-4A0C-A6BB-36F911530858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053A9C67-C541-4A0C-A6BB-36F911530858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
