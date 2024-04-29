@@ -101,15 +101,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//carriers/getcarrier?carrierCode={{carrierCode}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/carriers/getcarrier?carrierCode={{carrierCode}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"carriers",
 										"getcarrier"
 									],
@@ -216,15 +212,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//carriers",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/carriers",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"carriers"
 									]
 								}
@@ -331,15 +323,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//carriers/listpackages?carrierCode={{carrier-code}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/carriers/listpackages?carrierCode={{carrier-code}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"carriers",
 										"listpackages"
 									],
@@ -453,15 +441,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//carriers/listservices?carrierCode={{carrier-code}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/carriers/listservices?carrierCode={{carrier-code}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"carriers",
 										"listservices"
 									],
@@ -633,15 +617,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//customers",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/customers",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"customers"
 									],
 									"query": [
@@ -1024,15 +1004,11 @@
 									"raw": "{\r\n  \"orderNumber\": \"TEST-ORDER-API-DOCS\",\r\n  \"orderKey\": \"0f6bec18-3e89-4881-83aa-f392d84f4c74\",\r\n  \"orderDate\": \"2015-06-29T08:46:27.0000000\",\r\n  \"paymentDate\": \"2015-06-29T08:46:27.0000000\",\r\n  \"shipByDate\": \"2015-07-05T00:00:00.0000000\",\r\n  \"orderStatus\": \"awaiting_shipment\",\r\n  \"customerId\": 37701499,\r\n  \"customerUsername\": \"john.smith@gmail.com\",\r\n  \"customerEmail\": \"john.smith@gmail.com\",\r\n  \"billTo\": {\r\n    \"name\": \"The President\",\r\n    \"company\": null,\r\n    \"street1\": null,\r\n    \"street2\": null,\r\n    \"street3\": null,\r\n    \"city\": null,\r\n    \"state\": null,\r\n    \"postalCode\": null,\r\n    \"country\": null,\r\n    \"phone\": null,\r\n    \"residential\": null\r\n  },\r\n  \"shipTo\": {\r\n    \"name\": \"The President\",\r\n    \"company\": \"US Govt\",\r\n    \"street1\": \"1600 Pennsylvania Ave\",\r\n    \"street2\": \"Oval Office\",\r\n    \"street3\": null,\r\n    \"city\": \"Washington\",\r\n    \"state\": \"DC\",\r\n    \"postalCode\": \"20500\",\r\n    \"country\": \"US\",\r\n    \"phone\": \"555-555-5555\",\r\n    \"residential\": true\r\n  },\r\n  \"items\": [\r\n    {\r\n      \"lineItemKey\": \"vd08-MSLbtx\",\r\n      \"sku\": \"ABC123\",\r\n      \"name\": \"Test item #1\",\r\n      \"imageUrl\": null,\r\n      \"weight\": {\r\n        \"value\": 24,\r\n        \"units\": \"ounces\"\r\n      },\r\n      \"quantity\": 2,\r\n      \"unitPrice\": 99.99,\r\n      \"taxAmount\": 2.5,\r\n      \"shippingAmount\": 5,\r\n      \"warehouseLocation\": \"Aisle 1, Bin 7\",\r\n      \"options\": [\r\n        {\r\n          \"name\": \"Size\",\r\n          \"value\": \"Large\"\r\n        }\r\n      ],\r\n      \"productId\": 123456,\r\n      \"fulfillmentSku\": null,\r\n      \"adjustment\": false,\r\n      \"upc\": \"32-65-98\"\r\n    },\r\n    {\r\n      \"lineItemKey\": null,\r\n      \"sku\": \"DISCOUNT CODE\",\r\n      \"name\": \"10% OFF\",\r\n      \"imageUrl\": null,\r\n      \"weight\": {\r\n        \"value\": 0,\r\n        \"units\": \"ounces\"\r\n      },\r\n      \"quantity\": 1,\r\n      \"unitPrice\": -20.55,\r\n      \"taxAmount\": null,\r\n      \"shippingAmount\": null,\r\n      \"warehouseLocation\": null,\r\n      \"options\": [],\r\n      \"productId\": 123456,\r\n      \"fulfillmentSku\": \"SKU-Discount\",\r\n      \"adjustment\": true,\r\n      \"upc\": null\r\n    }\r\n  ],\r\n  \"amountPaid\": 218.73,\r\n  \"taxAmount\": 5,\r\n  \"shippingAmount\": 10,\r\n  \"customerNotes\": \"Please ship as soon as possible!\",\r\n  \"internalNotes\": \"Customer called and would like to upgrade shipping\",\r\n  \"gift\": true,\r\n  \"giftMessage\": \"Thank you!\",\r\n  \"paymentMethod\": \"Credit Card\",\r\n  \"requestedShippingService\": \"Priority Mail\",\r\n  \"carrierCode\": \"fedex\",\r\n  \"serviceCode\": \"fedex_2day\",\r\n  \"packageCode\": \"package\",\r\n  \"confirmation\": \"delivery\",\r\n  \"shipDate\": \"2015-07-02\",\r\n  \"weight\": {\r\n    \"value\": 25,\r\n    \"units\": \"ounces\"\r\n  },\r\n  \"dimensions\": {\r\n    \"units\": \"inches\",\r\n    \"length\": 7,\r\n    \"width\": 5,\r\n    \"height\": 6\r\n  },\r\n  \"insuranceOptions\": {\r\n    \"provider\": \"carrier\",\r\n    \"insureShipment\": true,\r\n    \"insuredValue\": 200\r\n  },\r\n  \"internationalOptions\": {\r\n    \"contents\": null,\r\n    \"customsItems\": null\r\n  },\r\n  \"advancedOptions\": {\r\n    \"warehouseId\": 0,\r\n    \"nonMachinable\": false,\r\n    \"saturdayDelivery\": false,\r\n    \"containsAlcohol\": false,\r\n    \"mergedOrSplit\": false,\r\n    \"mergedIds\": [],\r\n    \"parentId\": null,\r\n    \"storeId\": 179188,\r\n    \"customField1\": \"Custom data that you can add to an order. See Custom Field #2 & #3 for more info!\",\r\n    \"customField2\": \"Per UI settings, this information can appear on some carrier's shipping labels. See link below\",\r\n    \"customField3\": \"https://help.shipstation.com/hc/en-us/articles/206639957\",\r\n    \"source\": \"Webstore\",\r\n    \"billToParty\": null,\r\n    \"billToAccount\": null,\r\n    \"billToPostalCode\": null,\r\n    \"billToCountryCode\": null\r\n  },\r\n  \"tagIds\": [\r\n    53974\r\n  ]\r\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/createorder",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/createorder",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"createorder"
 									]
@@ -1927,15 +1903,11 @@
 									"raw": "{\n  \"orderId\": {{orderId}},\n  \"holdUntilDate\": \"2021-12-01\"\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/holduntil",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/holduntil",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"holduntil"
 									]
@@ -2036,15 +2008,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/{{orderId}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/{{orderId}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"{{orderId}}"
 									]
@@ -2162,15 +2130,11 @@
 									"raw": "{\n  \"orderId\": {{orderId}},\n  \"carrierCode\": \"usps\",\n  \"shipDate\": \"2021-01-24\",\n  \"trackingNumber\": \"913492493294329421\",\n  \"notifyCustomer\": true,\n  \"notifySalesChannel\": true\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/markasshipped",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/markasshipped",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"markasshipped"
 									]
@@ -2288,15 +2252,11 @@
 									"raw": "{\n  \"orderId\": {{orderId}},\n  \"tagId\": 1234\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/removetag",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/removetag",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"removetag"
 									]
@@ -2414,15 +2374,11 @@
 									"raw": "{\n  \"orderId\": {{orderId}}\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//orders/restorefromhold",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/orders/restorefromhold",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"orders",
 										"restorefromhold"
 									]
@@ -2555,15 +2511,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//products/{{productId}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/products/{{productId}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"products",
 										"{{productId}}"
 									]
@@ -2725,15 +2677,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//products",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/products",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"products"
 									],
 									"query": [
@@ -2912,15 +2860,11 @@
 									"raw": "{\n  \"aliases\": null,\n  \"productId\": {{productId}},\n  \"sku\": \"BEAU-000\",\n  \"name\": \"Beautiful\",\n  \"price\": 0,\n  \"defaultCost\": null,\n  \"length\": null,\n  \"width\": null,\n  \"height\": null,\n  \"weightOz\": null,\n  \"internalNotes\": null,\n  \"fulfillmentSku\": null,\n  \"active\": true,\n  \"productCategory\": null,\n  \"productType\": null,\n  \"warehouseLocation\": null,\n  \"defaultCarrierCode\": null,\n  \"defaultServiceCode\": null,\n  \"defaultPackageCode\": null,\n  \"defaultIntlCarrierCode\": null,\n  \"defaultIntlServiceCode\": null,\n  \"defaultIntlPackageCode\": null,\n  \"defaultConfirmation\": null,\n  \"defaultIntlConfirmation\": null,\n  \"customsDescription\": null,\n  \"customsValue\": null,\n  \"customsTariffNo\": null,\n  \"customsCountryCode\": null,\n  \"noCustoms\": null,\n  \"tags\": null\n}"
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//products/{{productId}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/products/{{productId}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"products",
 										"{{productId}}"
 									]
@@ -3070,7 +3014,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"carrierCode\": \"{{carrierCode}}\",\n    \"serviceCode\": null,\n    \"packageCode\": null,\n    \"fromPostalCode\": \"78703\",\n    \"toState\": \"DC\",\n    \"toCountry\": \"US\",\n    \"toPostalCode\": \"20500\",\n    \"toCity\": \"Washington\",\n    \"weight\": {\n        \"value\": 3,\n        \"units\": \"ounces\"\n    },\n    \"dimensions\": {\n        \"units\": \"inches\",\n        \"length\": 7,\n        \"width\": 5,\n        \"height\": 6\n    },\n    \"confirmation\": \"delivery\",\n    \"residential\": false\n}",
+									"raw": "{\n  \"carrierCode\": \"{{carrierCode}}\",\n  \"serviceCode\": null,\n  \"packageCode\": null,\n  \"fromPostalCode\": \"78703\",\n  \"toState\": \"DC\",\n  \"toCountry\": \"US\",\n  \"toPostalCode\": \"20500\",\n  \"toCity\": \"Washington\",\n  \"weight\": {\n    \"value\": 3,\n    \"units\": \"ounces\"\n  },\n  \"dimensions\": {\n    \"units\": \"inches\",\n    \"length\": 7,\n    \"width\": 5,\n    \"height\": 6\n  },\n  \"confirmation\": \"delivery\",\n  \"residential\": false\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3078,15 +3022,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://ssapi.shipstation.com//shipments/getrates",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/shipments/getrates",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"shipments",
 										"getrates"
 									]
@@ -3154,7 +3094,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"serviceName\": \"USPS First Class Mail - Letter\",\n        \"serviceCode\": \"usps_first_class_mail\",\n        \"shipmentCost\": 0.8,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS First Class Mail - Package\",\n        \"serviceCode\": \"usps_first_class_mail\",\n        \"shipmentCost\": 2.93,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Package\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.98,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Medium Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 13.2,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Small Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.65,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Large Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 18.3,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.15,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Flat Rate Padded Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.75,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Regional Rate Box A\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 10.42,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Regional Rate Box B\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 16.72,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Legal Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.45,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Package\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 28.25,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 22.75,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Flat Rate Padded Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 23.25,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Legal Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 22.95,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Media Mail - Package\",\n        \"serviceCode\": \"usps_media_mail\",\n        \"shipmentCost\": 2.8,\n        \"otherCost\": 0.0\n    },\n    {\n        \"serviceName\": \"USPS Parcel Select Ground - Package\",\n        \"serviceCode\": \"usps_parcel_select\",\n        \"shipmentCost\": 7.78,\n        \"otherCost\": 0.0\n    }\n]"
+							"body": "[\n    {\n        \"serviceName\": \"USPS First Class Mail - Letter\",\n        \"serviceCode\": \"usps_first_class_mail\",\n        \"shipmentCost\": 0.8,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS First Class Mail - Package\",\n        \"serviceCode\": \"usps_first_class_mail\",\n        \"shipmentCost\": 2.93,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Package\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.98,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Medium Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 13.2,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Small Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.65,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Large Flat Rate Box\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 18.3,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.15,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Flat Rate Padded Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.75,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Regional Rate Box A\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 10.42,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Regional Rate Box B\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 16.72,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail - Legal Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail\",\n        \"shipmentCost\": 7.45,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Package\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 28.25,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 22.75,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Flat Rate Padded Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 23.25,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Priority Mail Express - Legal Flat Rate Envelope\",\n        \"serviceCode\": \"usps_priority_mail_express\",\n        \"shipmentCost\": 22.95,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Media Mail - Package\",\n        \"serviceCode\": \"usps_media_mail\",\n        \"shipmentCost\": 2.8,\n        \"otherCost\": 0\n    },\n    {\n        \"serviceName\": \"USPS Parcel Select Ground - Package\",\n        \"serviceCode\": \"usps_parcel_select\",\n        \"shipmentCost\": 7.78,\n        \"otherCost\": 0\n    }\n]"
 						}
 					]
 				},
@@ -3373,15 +3313,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//stores",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/stores",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"stores"
 									],
 									"query": [
@@ -3494,15 +3430,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://ssapi.shipstation.com//stores/{{storeId}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/stores/{{storeId}}",
 									"host": [
-										"ssapi",
-										"shipstation",
-										"com"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"",
 										"stores",
 										"{{storeId}}"
 									]

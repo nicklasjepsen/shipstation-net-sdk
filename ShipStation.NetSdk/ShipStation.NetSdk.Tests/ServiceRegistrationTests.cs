@@ -6,7 +6,7 @@ namespace ShipStation.NetSdk.Tests
         [Fact]
         public void ServiceCollectionRegistration_Options_Null_Exception()
         {
-            var services = new ServiceCollection();
+            IServiceCollection services = new ServiceCollection();
             Assert.Throws<ArgumentNullException>(() => services.AddShipStation(null));
         }
 
@@ -36,12 +36,11 @@ namespace ShipStation.NetSdk.Tests
             services.AddShipStation(new ShipStationOptions(url, apiKey, apiSecret));
 
             var provider = services.BuildServiceProvider();
-            var service = provider.GetRequiredService<IHttpClientFactory>();
-            Assert.NotNull(service);
-            var httpClient = service.CreateClient(nameof(ShipStationService));
-            Assert.NotNull(httpClient);
-            Assert.Equal(url, httpClient.BaseAddress?.ToString());
-            Assert.Equal($"{apiKey}:{apiSecret}".Base64Encode(), httpClient.DefaultRequestHeaders.Authorization?.Parameter);
+
+            var shipStationClient = (ShipStationClient)provider.GetRequiredService<IShipStationClient>();
+            Assert.NotNull(shipStationClient);
+            Assert.Equal(url, shipStationClient.HttpClient.BaseAddress.ToString());
+            Assert.Equal("Basic " + $"{apiKey}:{apiSecret}".Base64Encode(), shipStationClient.AuthorizationHeader);
         }
     }
 }
