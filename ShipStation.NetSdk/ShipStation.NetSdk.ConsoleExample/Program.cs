@@ -12,7 +12,7 @@ namespace ShipStation.NetSdk.ConsoleExample
             {
                 CarrierCode = "fedex",
                 FromPostalCode = "78703",
-                Weight = new Weight6 { Value = 3, Units = "ounces" },
+                Weight = new Weight { Value = 3, Units = "ounces" },
                 ToCountry = "US",
                 ToPostalCode = "20500",
                 Dimensions = new Dimensions

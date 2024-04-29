@@ -7926,7 +7926,7 @@ namespace ShipStation.NetSdk
 
         [System.Text.Json.Serialization.JsonPropertyName("weight")]
         [System.ComponentModel.DataAnnotations.Required]
-        public Weight6 Weight { get; set; } = default!;
+        public Weight Weight { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("dimensions")]
         [System.ComponentModel.DataAnnotations.Required]
@@ -7951,28 +7951,6 @@ namespace ShipStation.NetSdk
 
         [System.Text.Json.Serialization.JsonPropertyName("testLabel")]
         public bool TestLabel { get; set; } = default!;
-
-        private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Weight6
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("value")]
-        public int Value { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("units")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Units { get; set; } = default!;
 
         private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
 
@@ -8133,7 +8111,7 @@ namespace ShipStation.NetSdk
 
         [System.Text.Json.Serialization.JsonPropertyName("weight")]
         [System.ComponentModel.DataAnnotations.Required]
-        public Weight6 Weight { get; set; } = default!;
+        public Weight Weight { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("dimensions")]
         [System.ComponentModel.DataAnnotations.Required]
