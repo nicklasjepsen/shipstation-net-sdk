@@ -1,5 +1,3 @@
-using ShipStation.NetSdk.Core;
-
 namespace ShipStation.NetSdk.Tests
 {
     [ExcludeFromCodeCoverage]
@@ -38,12 +36,11 @@ namespace ShipStation.NetSdk.Tests
             services.AddShipStation(new ShipStationOptions(url, apiKey, apiSecret));
 
             var provider = services.BuildServiceProvider();
-            var service = provider.GetRequiredService<IHttpClientFactory>();
-            Assert.NotNull(service);
-            var httpClient = service.CreateClient(nameof(ShipStationClient));
-            Assert.NotNull(httpClient);
-            Assert.Equal(url, httpClient.BaseAddress?.ToString());
-            Assert.Equal($"{apiKey}:{apiSecret}".Base64Encode(), httpClient.DefaultRequestHeaders.Authorization?.Parameter);
+
+            var shipStationClient = (ShipStationClient)provider.GetRequiredService<IShipStationClient>();
+            Assert.NotNull(shipStationClient);
+            Assert.Equal(url, shipStationClient.HttpClient.BaseAddress.ToString());
+            Assert.Equal("Basic " + $"{apiKey}:{apiSecret}".Base64Encode(), shipStationClient.AuthorizationHeader);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ShipStation.NetSdk.Core;
 
 namespace ShipStation.NetSdk.ConsoleExample
 {
@@ -16,7 +15,7 @@ namespace ShipStation.NetSdk.ConsoleExample
                 Weight = new Weight6 { Value = 3, Units = "ounces" },
                 ToCountry = "US",
                 ToPostalCode = "20500",
-                Dimensions = new Core.Dimensions
+                Dimensions = new Dimensions
                 {
                     Units = "lbs",
                     Height = 17,

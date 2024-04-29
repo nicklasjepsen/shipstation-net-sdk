@@ -19,7 +19,7 @@
 #pragma warning disable 8625 // Disable "CS8625 Cannot convert null literal to non-nullable reference type"
 #pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
 
-namespace ShipStation.NetSdk.Core
+namespace ShipStation.NetSdk
 {
     using System = global::System;
 
@@ -1143,10 +1143,6 @@ namespace ShipStation.NetSdk.Core
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ShipStationClient : IShipStationClient
     {
-        #pragma warning disable 8618
-        private string _baseUrl;
-        #pragma warning restore 8618
-
         private System.Net.Http.HttpClient _httpClient;
         private static System.Lazy<System.Text.Json.JsonSerializerOptions> _settings = new System.Lazy<System.Text.Json.JsonSerializerOptions>(CreateSerializerSettings, true);
 
@@ -1154,7 +1150,6 @@ namespace ShipStation.NetSdk.Core
         public ShipStationClient(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            BaseUrl = "https://ssapi.shipstation.com";
             _httpClient = httpClient;
         }
 
@@ -1163,17 +1158,6 @@ namespace ShipStation.NetSdk.Core
             var settings = new System.Text.Json.JsonSerializerOptions();
             UpdateJsonSerializerSettings(settings);
             return settings;
-        }
-
-        public string BaseUrl
-        {
-            get { return _baseUrl; }
-            set
-            {
-                _baseUrl = value;
-                if (!string.IsNullOrEmpty(_baseUrl) && !_baseUrl.EndsWith("/"))
-                    _baseUrl += '/';
-            }
         }
 
         public System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get { return _settings.Value; } }
@@ -1224,7 +1208,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "carriers/addfunds"
                     urlBuilder_.Append("carriers/addfunds");
 
@@ -1314,7 +1298,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "carriers/getcarrier"
                     urlBuilder_.Append("carriers/getcarrier");
                     urlBuilder_.Append('?');
@@ -1407,7 +1391,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "carriers"
                     urlBuilder_.Append("carriers");
 
@@ -1502,7 +1486,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "carriers/listpackages"
                     urlBuilder_.Append("carriers/listpackages");
                     urlBuilder_.Append('?');
@@ -1600,7 +1584,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "carriers/listservices"
                     urlBuilder_.Append("carriers/listservices");
                     urlBuilder_.Append('?');
@@ -1728,7 +1712,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "customers"
                     urlBuilder_.Append("customers");
                     urlBuilder_.Append('?');
@@ -1830,7 +1814,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "customers/{customerId}"
                     urlBuilder_.Append("customers/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(customerId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -1981,7 +1965,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "fulfillments"
                     urlBuilder_.Append("fulfillments");
                     urlBuilder_.Append('?');
@@ -2094,7 +2078,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/createorder"
                     urlBuilder_.Append("orders/createorder");
 
@@ -2197,7 +2181,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/createorders"
                     urlBuilder_.Append("orders/createorders");
 
@@ -2291,7 +2275,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/createlabelfororder"
                     urlBuilder_.Append("orders/createlabelfororder");
 
@@ -2388,7 +2372,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/assignuser"
                     urlBuilder_.Append("orders/assignuser");
 
@@ -2488,7 +2472,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/addtag"
                     urlBuilder_.Append("orders/addtag");
 
@@ -2669,7 +2653,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders"
                     urlBuilder_.Append("orders");
                     urlBuilder_.Append('?');
@@ -2795,7 +2779,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/listbytag"
                     urlBuilder_.Append("orders/listbytag");
                     urlBuilder_.Append('?');
@@ -2889,7 +2873,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/{orderId}"
                     urlBuilder_.Append("orders/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -2983,7 +2967,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/{orderId}"
                     urlBuilder_.Append("orders/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(orderId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -3081,7 +3065,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/holduntil"
                     urlBuilder_.Append("orders/holduntil");
 
@@ -3178,7 +3162,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/markasshipped"
                     urlBuilder_.Append("orders/markasshipped");
 
@@ -3275,7 +3259,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/removetag"
                     urlBuilder_.Append("orders/removetag");
 
@@ -3372,7 +3356,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/restorefromhold"
                     urlBuilder_.Append("orders/restorefromhold");
 
@@ -3466,7 +3450,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "orders/unassignuser"
                     urlBuilder_.Append("orders/unassignuser");
 
@@ -3548,7 +3532,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "products/{productId}"
                     urlBuilder_.Append("products/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(productId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -3649,7 +3633,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "products/{productId}"
                     urlBuilder_.Append("products/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(productId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -3800,7 +3784,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "products"
                     urlBuilder_.Append("products");
                     urlBuilder_.Append('?');
@@ -3908,7 +3892,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "shipments/createlabel"
                     urlBuilder_.Append("shipments/createlabel");
 
@@ -4000,7 +3984,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "shipments/getrates"
                     urlBuilder_.Append("shipments/getrates");
 
@@ -4182,7 +4166,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "shipments"
                     urlBuilder_.Append("shipments");
                     urlBuilder_.Append('?');
@@ -4292,7 +4276,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "shipments/voidlabel"
                     urlBuilder_.Append("shipments/voidlabel");
 
@@ -4377,7 +4361,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores"
                     urlBuilder_.Append("stores");
 
@@ -4464,7 +4448,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/{storeId}"
                     urlBuilder_.Append("stores/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(storeId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -4562,7 +4546,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("PUT");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/{storeId}"
                     urlBuilder_.Append("stores/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(storeId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -4655,7 +4639,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/deactivate"
                     urlBuilder_.Append("stores/deactivate");
 
@@ -4752,7 +4736,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/reactivate"
                     urlBuilder_.Append("stores/reactivate");
 
@@ -4842,7 +4826,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/marketplaces"
                     urlBuilder_.Append("stores/marketplaces");
 
@@ -4936,7 +4920,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/refreshstore"
                     urlBuilder_.Append("stores/refreshstore");
 
@@ -5023,7 +5007,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "stores/getrefreshstatus"
                     urlBuilder_.Append("stores/getrefreshstatus");
                     urlBuilder_.Append('?');
@@ -5110,7 +5094,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "users"
                     urlBuilder_.Append("users");
                     urlBuilder_.Append('?');
@@ -5210,7 +5194,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "warehouses/createwarehouse"
                     urlBuilder_.Append("warehouses/createwarehouse");
 
@@ -5300,7 +5284,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "warehouses"
                     urlBuilder_.Append("warehouses");
 
@@ -5393,7 +5377,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "warehouses/{warehouseId}"
                     urlBuilder_.Append("warehouses/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(warehouseId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -5502,7 +5486,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "warehouses/{warehouseId}"
                     urlBuilder_.Append("warehouses/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(warehouseId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -5596,7 +5580,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "warehouses/{warehouseId}"
                     urlBuilder_.Append("warehouses/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(warehouseId, System.Globalization.CultureInfo.InvariantCulture)));
@@ -5687,7 +5671,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "webhooks"
                     urlBuilder_.Append("webhooks");
 
@@ -5784,7 +5768,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "webhooks/subscribe"
                     urlBuilder_.Append("webhooks/subscribe");
 
@@ -5876,7 +5860,7 @@ namespace ShipStation.NetSdk.Core
                     request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "webhooks/{webhookId}"
                     urlBuilder_.Append("webhooks/");
                     urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(webhookId, System.Globalization.CultureInfo.InvariantCulture)));
