@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+
 namespace ShipStation.NetSdk.Tests
 {
     [ExcludeFromCodeCoverage]
@@ -6,8 +8,22 @@ namespace ShipStation.NetSdk.Tests
         [Fact]
         public void ServiceCollectionRegistration_Options_Null_Exception()
         {
-            var services = new ServiceCollection();
-            Assert.Throws<ArgumentNullException>(() => services.AddShipStation(null));
+            IServiceCollection services = new ServiceCollection();
+            Assert.Throws<ArgumentNullException>(() => services.AddShipStation((IConfiguration)null));
+        }
+
+        private static IConfiguration GetConfiguration(string url, string apiKey, string apiSecret)
+        {
+            var inMemorySettings = new Dictionary<string, string>
+            {
+                {"ShipStation:BaseUrl", url},
+                {"ShipStation:ApiKey", apiKey},
+                {"ShipStation:ApiSecret", apiSecret},
+                //...populate as needed for the test
+            };
+            return new ConfigurationBuilder()
+                .AddInMemoryCollection(inMemorySettings)
+                .Build();
         }
 
         [Theory]
@@ -16,24 +32,28 @@ namespace ShipStation.NetSdk.Tests
         [InlineData("https://valid.url/", "validapikey", "")]
         public void ServiceCollectionRegistration_Options_Invalid_Values(string url, string apiKey, string apiSecret)
         {
+            //Arrange
+            var configuration = GetConfiguration(url, apiKey, apiSecret);
             var services = new ServiceCollection();
-            Assert.Throws<ArgumentException>(() => services.AddShipStation(new ShipStationOptions(url, apiKey, apiSecret)));
+            Assert.Throws<ArgumentException>(() => services.AddShipStation(configuration));
         }
 
         [Theory]
         [InlineData("https://valid.url/", "validapikey", "validapisecret")]
         public void ServiceCollectionRegistration_Options_Valid_Values(string url, string apiKey, string apiSecret)
         {
+            var configuration = GetConfiguration(url, apiKey, apiSecret);
             var services = new ServiceCollection();
-            services.AddShipStation(new ShipStationOptions(url, apiKey, apiSecret));
+            services.AddShipStation(configuration);
         }
 
         [Theory]
         [InlineData("https://valid.url/", "validapikey", "validapisecret")]
         public void ServiceCollectionRegistration_Options_Assigned_In_Service(string url, string apiKey, string apiSecret)
         {
+            var configuration = GetConfiguration(url, apiKey, apiSecret);
             var services = new ServiceCollection();
-            services.AddShipStation(new ShipStationOptions(url, apiKey, apiSecret));
+            services.AddShipStation(configuration);
 
             var provider = services.BuildServiceProvider();
             var service = provider.GetRequiredService<IHttpClientFactory>();

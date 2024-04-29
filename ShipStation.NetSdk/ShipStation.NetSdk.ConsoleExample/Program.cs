@@ -11,14 +11,15 @@ namespace ShipStation.NetSdk.ConsoleExample
 
         private static async Task<int> Main()
         {
-            var config = new ConfigurationBuilder()
-                .AddUserSecrets<Program>()
-                .Build();
-         
             var builder = new HostBuilder()
+                .ConfigureAppConfiguration(configApp =>
+                {
+                    configApp.AddUserSecrets<Program>();
+                })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddShipStation(new ShipStationOptions(config["ShipStation:BaseUrl"], config["ShipStation:ApiKey"], config["ShipStation:ApiSecret"]));
+                    services.AddShipStation(hostContext.Configuration);
+                    services.AddTransient<SdkTest>();
                 }).UseConsoleLifetime();
 
             var host = builder.Build();
