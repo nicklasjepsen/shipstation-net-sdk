@@ -45,7 +45,7 @@ namespace ShipStation.NetSdk.ConsoleExample
             var builder = new HostBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddShipStationCore(new ShipStationOptions(config["ShipStation:BaseUrl"], config["ShipStation:ApiKey"], config["ShipStation:ApiSecret"]));
+                    services.AddShipStation(new ShipStationOptions(config["ShipStation:BaseUrl"], config["ShipStation:ApiKey"], config["ShipStation:ApiSecret"]));
                     //services.AddShipStation(new ShipStationOptions(config["ShipStation:BaseUrl"], config["ShipStation:ApiKey"], config["ShipStation:ApiSecret"]));
 
                     services.AddTransient<SdkTest>();

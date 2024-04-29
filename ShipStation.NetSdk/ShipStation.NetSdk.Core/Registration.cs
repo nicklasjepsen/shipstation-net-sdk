@@ -6,7 +6,7 @@ namespace ShipStation.NetSdk
 {
     public static class Registration
     {
-        public static void AddShipStationCore(this IServiceCollection services, ShipStationOptions options)
+        public static void AddShipStation(this IServiceCollection services, ShipStationOptions options)
         {
             if(options == null)
                 throw new ArgumentNullException(nameof(options));
