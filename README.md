@@ -1,13 +1,62 @@
-# shipstation-net-sdk
-.NET SDK for the ShipStation REST API
+# ShipStation SDK for .NET
+.NET SDK for the ShipStation's REST API
 
-# Run the console app
-You need to add the ShipStation api options using user secrets:
+## Getting started
+### 1. Setup a new .net project
+Create a console app.
 
+Install Nugets 
+```ps  
+NuGet\Install-Package ShipStation.NetSdk -Version 1.1.1-beta
+NuGet\Install-Package Microsoft.Extensions.Configuration.UserSecrets
+NuGet\Install-Package Microsoft.Extensions.Hosting
 ```
+Add user secrets
+```ps  
 dotnet user-secrets set "ShipStation:BaseUrl" "https://ssapi.shipstation.com/"
 dotnet user-secrets set "ShipStation:ApiKey" ""
 dotnet user-secrets set "ShipStation:ApiSecret" ""
+```
+Replace the contents of `Program.cs` with the following code:
+
+```csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ShipStation.NetSdk;
+
+var builder = Host.CreateApplicationBuilder(args);
+IConfiguration configuration = new ConfigurationBuilder()
+    .AddUserSecrets<Program>()
+    .Build();
+builder.Services.AddShipStation(configuration);
+using var host = builder.Build();
+
+var client = host.Services.GetRequiredService<IShipStationClient>();
+var request = new GetRatesRequest
+{
+    CarrierCode = "fedex",
+    FromPostalCode = "78703", 
+    Weight = new Weight { Value = 3, Units = "ounces" },
+    ToCountry = "US",
+    ToPostalCode = "20500",
+    Dimensions = new Dimensions
+    {
+        Units = "lbs",
+        Height = 17,
+        Length = 17,
+        Width = 6,
+    },
+};
+
+var rates = await client.GetRatesAsync(request);
+foreach (var rate in rates)
+{
+    Console.WriteLine($"{rate.ServiceName} - {rate.ServiceCode} - {rate.ShipmentCost}");
+}
+
+await host.RunAsync();
+
 ```
 
 ## Generating the ShipStation client code
@@ -18,4 +67,3 @@ dotnet user-secrets set "ShipStation:ApiSecret" ""
 - Click API Spec (upper left corner) > Open API, select YAML
 - Due to problems with NSwag generation, we need to modify the YAML. Find/replace: allOf, replace with oneOf
 - NSwag, use the YAML to generate the C# classes
-
