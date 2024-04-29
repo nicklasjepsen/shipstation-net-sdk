@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-
-namespace ShipStation.NetSdk
+﻿namespace ShipStation.NetSdk
 {
     public partial class ShipStationClient
     {

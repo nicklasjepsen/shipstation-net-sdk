@@ -1,13 +1,39 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace ShipStation.NetSdk.ConsoleExample
 {
+    public class SdkTest(IShipStationClient client)
+    {
+        public async Task Test()
+        {
+            var request = new GetRatesRequest
+            {
+                CarrierCode = "fedex",
+                FromPostalCode = "78703",
+                Weight = new Weight { Value = 3, Units = "ounces" },
+                ToCountry = "US",
+                ToPostalCode = "20500",
+                Dimensions = new Dimensions
+                {
+                    Units = "lbs",
+                    Height = 17,
+                    Length = 17,
+                    Width = 6,
+                },
+            };
+            var rates = await client.GetRatesAsync(request);
+
+            Console.WriteLine(string.Join(',', rates.Select(r => r.OtherCost)));
+        }
+    }
+
     internal class Program
     {
-        protected Program(){}
+        protected Program() { }
+
+
 
         private static async Task<int> Main()
         {
@@ -24,37 +50,8 @@ namespace ShipStation.NetSdk.ConsoleExample
 
             var host = builder.Build();
 
-            try
-            {
-                var shipStation = host.Services.GetRequiredService<ShipStationService>();
-                var rateRequest = new RateRequest(
-                    "fedex", 
-                    "78703", 
-                    new Weight(
-                        3, 
-                        "ounces"
-                        ),
-                    "US", 
-                    "20500"
-                    )
-                {
-                    Dimensions = new Dimensions(17, 17, 6, "lbs"),
-                };
-                var rates = await shipStation.GetRates(rateRequest);
-                //var rates = await shipStation.GetRates(new RateRequest("fedex", "78703", new Weight(3, "ounces"),
-                //    "US", "20500"));
-                foreach (var rate in rates)
-                {
-                    Console.WriteLine($"ServiceName: {rate.ServiceName}, serviceCode: {rate.ServiceCode}, shipment cost: {rate.ShipmentCost}, other cost: {rate.OtherCost}");
-                }
-            }
-            catch (Exception ex)
-            {
-                var logger = host.Services.GetRequiredService<ILogger<Program>>();
+            await host.Services.GetRequiredService<SdkTest>().Test();
 
-                logger.LogError(ex, "An error occurred.");
-            }
-            
             return 0;
         }
     }

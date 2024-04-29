@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace ShipStation.NetSdk
 {
-    public static class ServiceCollectionExtensions
+    public static class Registration
     {
         public static void AddShipStation(this IServiceCollection services, IConfiguration configuration)
         {
@@ -38,10 +38,10 @@ namespace ShipStation.NetSdk
             if (string.IsNullOrEmpty(options.ApiSecret))
                 throw new ArgumentException("ApiSecret must be set.");
 
-            services.AddHttpClient<ShipStationService>(client =>
+            services.AddHttpClient<IShipStationClient, ShipStationClient>(httpClient =>
             {
-                client.BaseAddress = new Uri(options.BaseUrl);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+                httpClient.BaseAddress = new Uri(options.BaseUrl);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
                     $"{options.ApiKey}:{options.ApiSecret}".Base64Encode());
             });
         }
