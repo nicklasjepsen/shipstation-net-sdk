@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShipStation.NetSdk.Core\ShipStation.NetSdk.csproj" />
+    <ProjectReference Include="..\ShipStation.NetSdk\ShipStation.NetSdk.csproj" />
   </ItemGroup>
 
 </Project>
